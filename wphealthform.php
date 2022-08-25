@@ -12,3 +12,5 @@ Author URI: https://www.linkedin.com/in/harson-joro-jr007/
 Licence: GPLv2 or later
 Text Domain: wphealthform
 */
+
+defined( ABSPATH ) or die( "Unfortunately I can't do nothing when I'm called directly T_T" );
