@@ -51,11 +51,28 @@ if ( ! class_exists( 'WpHealthForm' ) ) {
             return ob_get_clean();
         }
 
+        public function create_table()  {
+            global $wpdb;
+            $healthTable = $wpdb->prefix . 'wphealthform';
+            
+            $query = "
+            CREATE TABLE $healthTable(
+                id int (10) NOT NULL AUTO_INCREMENT,
+                nom varchar (100) DEFAULT '',
+                email varchar (100) DEFAULT '',
+                adresse1 varchar (100) DEFAULT '',
+                adresse2 varchar (100) DEFAULT '',
+                PRIMARY KEY (id)
+            )";
+            require_once( ABSPATH . "wp-admin/includes/upgrade.php" );
+            dbDelta( $query, true );
+        }
     }
 
     $wpHealthForm = new WpHealthForm();
     $wpHealthForm->register_assets();
     $wpHealthForm->register_shortcode();
+    $wpHealthForm->create_table();
 
     register_activation_hook( __FILE__, [$wpHealthForm, 'activate'] );
 
