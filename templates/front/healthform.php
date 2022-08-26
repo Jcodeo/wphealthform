@@ -7,31 +7,31 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-     <form>
+     <form method="post" action="<?php echo plugin_dir_url( dirname( __FILE__, 2 ) ) ?>inc/process/">
      <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" class="form-control" id="firstName" placeholder="Jem" required>
+    <input type="text" class="form-control" id="firstName" placeholder="Jem" name="nom">
     </div>
      
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Jem@email.com" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Jem@email.com" aria-describedby="emailHelp" name="email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   
   <div class="form-group">
     <label for="exampleInputPassword1">Address </label>
-    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+    <input type="text" class="form-control" id="address" placeholder="1234 Main St" name="adresse1">
     <small class="form-text text-muted">Street Address</small>
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="address" required>
+    <input type="text" class="form-control" id="address" name="adresse2">
     <small class="form-text text-muted">Street Address Line 2 </small>
   </div>
   <div class="row">
           <div class="col-md-5 mb-3">
             <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required>
+            <select class="custom-select d-block w-100" id="country" name="">
               <option value="">Choose...</option>
               <option>United States</option>
             </select>
@@ -41,7 +41,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="state">State</label>
-            <select class="custom-select d-block w-100" id="state" required>
+            <select class="custom-select d-block w-100" id="state" name="">
               <option value="">Choose...</option>
               <option>California</option>
             </select>
@@ -51,9 +51,9 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required>
+            <input type="text" class="form-control" id="zip" placeholder="" name="">
             <div class="invalid-feedback">
-              Zip code required.
+              Zip code name="".
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
        <form>
      <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" class="form-control" id="firstName" placeholder="Jem" required>
+    <input type="text" class="form-control" id="firstName" placeholder="Jem" name="">
     </div>
      
     <div class="form-group">
@@ -72,17 +72,17 @@
   
   <div class="form-group">
     <label for="exampleInputPassword1">Address </label>
-    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+    <input type="text" class="form-control" id="address" placeholder="1234 Main St" name="">
     <small class="form-text text-muted">Street Address</small>
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="address" required>
+    <input type="text" class="form-control" id="address" name="">
     <small class="form-text text-muted">Street Address Line 2 </small>
   </div>
   <div class="row">
           <div class="col-md-5 mb-3">
             <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required>
+            <select class="custom-select d-block w-100" id="country" name="">
               <option value="">Choose...</option>
               <option>United States</option>
             </select>
@@ -92,7 +92,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="state">State</label>
-            <select class="custom-select d-block w-100" id="state" required>
+            <select class="custom-select d-block w-100" id="state" name="">
               <option value="">Choose...</option>
               <option>California</option>
             </select>
@@ -102,14 +102,14 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required>
+            <input type="text" class="form-control" id="zip" placeholder="" name="">
             <div class="invalid-feedback">
-              Zip code required.
+              Zip code name="".
             </div>
           </div>
         </div>
 <hr class="mb-4">
-  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+  <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit_form">Submit</button>
   </form>
     </div>
   </div>
