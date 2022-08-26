@@ -92,17 +92,21 @@ if ( ! class_exists( 'WpHealthForm' ) ) {
             echo '<h1>Configuration du module</h1>';
         }
         public function health_form_woman_list_call() {
-            echo '<h1>Liste sondage pour les femmes</h1>';
+            require_once( WPHEALTHFORM_PATH . 'templates/back/healthformwoman-list.php');
         }
         public function health_form_man_list_call() {
-            echo '<h1>Liste sondage pour les hommes</h1>';
+            require_once( WPHEALTHFORM_PATH . 'templates/back/healthformman-list.php');
         }        
+
+
     }
     $wpHealthForm = new WpHealthForm();
     $wpHealthForm->register_assets();
     $wpHealthForm->register_shortcode();
     $wpHealthForm->create_table();
     $wpHealthForm->register_admin_menu();
+
+
     register_activation_hook( __FILE__, [$wpHealthForm, 'activate'] ); 
     register_deactivation_hook( __FILE__,[$wpHealthForm, 'deactivate'] );
 }
