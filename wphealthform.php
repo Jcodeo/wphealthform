@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpHealthForm' ) ) {
             add_submenu_page( 'wp-health-form', 'Liste de sondage pour les hommes', 'Sondage hommes', 'manage_options', 'liste-sondage-hommes', [ $this, 'health_form_man_list_call' ] );
         }
         public function health_form_settings() {
-            echo '<h1>Configuration du module</h1>';
+            require_once( WPHEALTHFORM_PATH . 'templates/back/healthform-settings.php');
         }
         public function health_form_woman_list_call() {
             require_once( WPHEALTHFORM_PATH . 'templates/back/healthformwoman-list.php');
@@ -97,7 +97,16 @@ if ( ! class_exists( 'WpHealthForm' ) ) {
         public function health_form_man_list_call() {
             require_once( WPHEALTHFORM_PATH . 'templates/back/healthformman-list.php');
         }        
-
+        
+        public function register_settings() {
+            add_action( 'admin_init', [ $this, 'save_config' ] );
+        }
+        public function save_config() {
+            register_setting( 'healthformsetting', 'setting1' );
+            register_setting( 'healthformsetting', 'setting2' );
+            register_setting( 'healthformsetting', 'setting3' );
+        }
+        
 
     }
     $wpHealthForm = new WpHealthForm();
@@ -105,6 +114,7 @@ if ( ! class_exists( 'WpHealthForm' ) ) {
     $wpHealthForm->register_shortcode();
     $wpHealthForm->create_table();
     $wpHealthForm->register_admin_menu();
+    $wpHealthForm->register_settings();
 
 
     register_activation_hook( __FILE__, [$wpHealthForm, 'activate'] ); 
