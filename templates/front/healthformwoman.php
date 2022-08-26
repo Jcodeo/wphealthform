@@ -1,7 +1,7 @@
 <div class="container">
   <div class="py-5 text-center">
     <img class="d-block mx-auto mb-4" src="<?php echo plugin_dir_url( dirname( __FILE__, 2 ) ) ?>assets/img/logo.jpg" alt="" width="72" height="72">
-    <h2>Registration Form Template</h2>
+    <h2>Woman Registration</h2>
   </div>
  </div>
 <div class="container">
@@ -109,7 +109,7 @@
           </div>
         </div>
 <hr class="mb-4">
-  <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit_form">Submit</button>
+  <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit_form_woman">Submit</button>
   </form>
     </div>
   </div>
